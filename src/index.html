@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Word Search Game</title>
+    <meta name="description" content="Word Search Game"></meta> 
+    <link rel="stylesheet" href="app.css"/>
+</head>
+<body>
+    <h1>Word Search Game!</h1>
+
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <input id="add-word" placeholder="Add a word" />
+            <button id="add-word-btn">Add Word</button>
+
+            <p>Type a word and click "Add Word" or just click "Generate Grid" to use default words.</p>
+
+            <input id="x-axis" type="number" placeholder="Rows" />
+            <input id="y-axis" type="number" placeholder="Columns" />
+            <button class="submit-word">Generate Grid</button>
+
+            <h3>Words to find are:</h3>
+            <ul id="word-list-display"></ul>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <section class="grid-area"></section>
+        </div>
+    </div>
+
+    <script type="module" src="js/index.js"></script>
+</body>
+
+</html>
