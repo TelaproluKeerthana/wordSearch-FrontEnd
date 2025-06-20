@@ -11,12 +11,20 @@ const wordList = [];
 const grid = new Grid();
 
 submitWordBtn.addEventListener("click", async () => {
-    const newWord = wordInput.value.trim().toUpperCase();
-    if (newWord && !wordList.includes(newWord)){
-        wordList.push(newWord);
+    const rawInput = wordInput.value.trim().toUpperCase();
+    const newWords = rawInput
+        .split(",")
+        .map(w => w.trim())
+        .filter(w => w !== "");
+
+    for (const word of newWords) {
+        if (!wordList.includes(word)) {
+            wordList.push(word);
+        }
     }
+
     console.log("Button clicked with words:", wordList);
-     const xAxis = parseInt(xAxisInput.value, 10);
+    const xAxis = parseInt(xAxisInput.value, 10);
     const yAxis = parseInt(yAxisInput.value, 10);
     const finalWords = wordList.length > 0 ? wordList : defaultWords;
     window.validWords = finalWords;
